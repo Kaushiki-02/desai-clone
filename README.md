@@ -20,7 +20,7 @@ This project is a frontend clone of the Desai Foundation's homepage, built with 
 ## Setup
 
 ```bash
-git clone https://github.com/Kaushiki-02/desai-clone.git
+git clone https://github.com/yourusername/desai-clone.git
 cd desai-clone
 npm install
 npm start
