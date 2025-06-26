@@ -1,31 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Dropdown = ({ title, items }) => {
   const [open, setOpen] = useState(false);
+  const dropdownRef = useRef();
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
-    <div
-      className="relative inline-block text-xs"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
-    >
-      <button className="flex items-center px-3 py-2 font-semibold text-black hover:text-pink-600 focus:outline-none">
+    <div ref={dropdownRef} className="relative inline-block text-xs">
+      <button
+        onClick={() => setOpen(!open)}
+        className="flex items-center px-3 py-2 font-semibold text-black hover:text-dfPink focus:outline-none"
+      >
         {title}
         <FaChevronDown className="ml-1 text-xs" />
       </button>
 
-      {/* DROPDOWN FIX: no vertical gap + pointer-safe zone */}
       {open && (
-        <div className="absolute left-0 top-full w-48 bg-white border border-gray-200 z-50 shadow-md">
+        <div className="absolute left-0 mt-2 w-48 bg-dfPink rounded border border-gray-200 z-50">
           {items.map((item, index) => (
-            <a
+            <Link
               key={index}
-              href="/"
-              className="block px-4 py-2 text-gray-800 hover:bg-pink-100 text-sm"
+              to={item.link}
+              className="block px-4 py-2 text-white hover:bg-white hover:text-dfPink text-sm transition-colors duration-150"
+              onClick={() => setOpen(false)}
             >
-              {item}
-            </a>
+              {item.label}
+            </Link>
           ))}
         </div>
       )}
@@ -36,48 +47,56 @@ const Dropdown = ({ title, items }) => {
 const Navbar = () => {
   return (
     <>
-      {/* Top pink banner */}
-      <div
-        className="text-white text-center py-2 text-xs"
-        style={{ backgroundColor: '#d643b6' }}
-      >
+      <div className="text-white text-center py-2 text-xs" style={{ backgroundColor: '#d643b6' }}>
         JOIN US AT THIS YEAR'S LOTUS FESTIVAL!
       </div>
 
-      {/* Main navbar */}
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-center gap-6 text-xs">
-          {/* Logo */}
-          <a href="/" className="flex-shrink-0">
+          <Link to="/" className="flex-shrink-0">
             <img src="/assets/logo.png" alt="Logo" className="h-12" />
-          </a>
+          </Link>
 
-          {/* Menu */}
           <div className="flex flex-wrap items-center justify-center gap-4 text-xs">
-            <a href="/" className="text-pink-600 font-semibold underline">
-              Home
-            </a>
-            <Dropdown title="About" items={['About', 'Our Team']} />
-            <Dropdown title="What We Do" items={['Our Work', 'Beneficiary Stories', 'Regional Map']} />
-            <a href="/news" className="font-semibold text-black hover:text-pink-600">
+            <Link to="/" className="text-dfPink font-semibold underline">Home</Link>
+
+            <Dropdown title="About" items={[
+              { label: 'About', link: '/about' },
+              { label: 'Our Team', link: '/team' },
+            ]} />
+
+            <Dropdown title="What We Do" items={[
+              { label: 'Our Work', link: '/our-work' },
+              { label: 'Beneficiary Stories', link: '/stories' },
+              { label: 'Regional Map', link: '/map' },
+            ]} />
+
+            <Link to="/news" className="font-semibold text-black hover:text-dfPink">
               News + Events
-            </a>
-            <Dropdown title="Our Impact" items={['Our Impact', 'Awards & Recognition']} />
-            <Dropdown title="Take Action" items={['Volunteer', 'Fundraise', 'Careers']} />
-            <a href="/india" className="flex items-center font-semibold hover:text-pink-600">
-              <img
-                src="https://flagcdn.com/w20/in.png"
-                alt="India"
-                className="w-4 h-3 mr-1"
-              />
+            </Link>
+
+            <Dropdown title="Our Impact" items={[
+              { label: 'Our Impact', link: '/impact' },
+              { label: 'Awards & Recognition', link: '/awards' },
+            ]} />
+
+            <Dropdown title="Take Action" items={[
+              { label: 'Volunteer', link: '/volunteer' },
+              { label: 'Fundraise', link: '/fundraise' },
+              { label: 'Careers', link: '/careers' },
+            ]} />
+
+            <a href="/india" className="flex items-center font-semibold hover:text-dfPink">
+              <img src="https://flagcdn.com/w20/in.png" alt="India" className="w-4 h-3 mr-1" />
               India Site
             </a>
-            <a
-              href="/donate"
-              className="bg-pink-600 text-white text-xs font-bold px-4 py-2 rounded-full hover:bg-pink-700"
+
+            <Link
+              to="/donate"
+              className="bg-dfPink text-white text-xs font-bold px-4 py-2 rounded-full hover:bg-pink-700"
             >
               DONATE NOW
-            </a>
+            </Link>
           </div>
         </div>
       </div>

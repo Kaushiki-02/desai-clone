@@ -7,6 +7,32 @@ import focus4 from '../assets/focus4.png';
 export default function OurFocus() {
   return (
     <section className="bg-white">
+       {/* === Awards Section === */}
+<div className="mt-16 bg-gray-100 py-1">
+  <div className="max-w-2xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+    
+    {/* Left Text */}
+    <div className="text-center md:text-left md:w-1/2 mb-6 md:mb-0">
+      <h3 className="text-dfPink font-bold text-lg mb-2">
+        Recent Awards
+      </h3>
+      <p className="text-base md:text-sm font-bold text-gray-800 leading-snug">
+        AWARDED THE “TOP 20 MOST TRUSTED NGO’S” BY <br />
+        THE INDIAN CSR AWARDS
+      </p>
+    </div>
+
+    {/* Right Logo */}
+    <div className="md:w-1/3 w-40">
+      <img
+        src={require('../assets/csr-award-logo.png')}
+        alt="CSR Award Logo"
+        className="w-full object-contain"
+      />
+    </div>
+  </div>
+</div>
+
       {/* Top Focus Title */}
       <div className="text-center py-8">
         <h3 className="text-dfPink font-bold text-lg mb-2">Our Focus</h3>
