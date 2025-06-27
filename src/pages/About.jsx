@@ -76,6 +76,118 @@ const About = () => {
 
       {/* Interactive Timeline (only one year visible at a time) */}
       <Timeline data={timelineData} />
+      {/* === SDG and Indian Initiatives Section === */}
+<section className="px-4 md:px-20 py-8 bg-white">
+  <h2 className="text-xl font-bold text-center text-gray-800 mb-6">
+    Our Alignment with Global & National Goals
+  </h2>
+  <img
+    src="/assets/sdg-initiatives.png"
+    alt="UN SDGs and Indian Government Initiatives"
+    className="mx-auto w-full max-w-6xl h-auto"
+  />
+</section>
+
+{/* === Annual Reports Section === */}
+<section className="px-4 md:px-20 py-16 bg-gray-50">
+  <div className="flex flex-col lg:flex-row items-center gap-10">
+    
+    {/* Left Image */}
+    <div className="lg:w-1/2 w-full">
+      <img
+        src="/assets/annual-reports.jpg"
+        alt="Annual Reports"
+        className="w-full h-auto rounded shadow"
+      />
+    </div>
+
+    {/* Right Text + Buttons */}
+    <div className="lg:w-1/2 w-full">
+      <h2 className="text-3xl font-bold text-dfPink mb-4">Annual Reports</h2>
+      <p className="text-gray-700 mb-6">
+        This comprehensive document outlines our work, impact, objectives, approach, and goals in the current year and moving forward. We hope you take a few moments to learn about our programs in India.
+      </p>
+
+      {/* Grid of buttons */}
+      <div className="grid grid-cols-2 gap-4">
+        <a href="#" className="bg-dfPink text-white font-semibold py-3 px-6 text-center hover:bg-pink-800 transition">ANNUAL REPORT 2024</a>
+        <a href="#" className="bg-dfPink text-white font-semibold py-3 px-6 text-center hover:bg-pink-800 transition">ANNUAL REPORT 2023</a>
+        <a href="#" className="bg-dfPink text-white font-semibold py-3 px-6 text-center hover:bg-pink-800 transition">ANNUAL REPORT 2022</a>
+        <a href="#" className="bg-dfPink text-white font-semibold py-3 px-6 text-center hover:bg-pink-800 transition">ANNUAL REPORT 2021</a>
+        <a href="#" className="bg-dfPink text-white font-semibold py-3 px-6 text-center hover:bg-pink-800 transition">ANNUAL REPORT 2020</a>
+        <a href="#" className="bg-dfPink text-white font-semibold py-3 px-6 text-center hover:bg-pink-800 transition">ANNUAL REPORT 2019</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* === Audited Financial Statements Section === */}
+<section className="px-4 md:px-20 py-16 bg-white">
+  <div className="flex flex-col lg:flex-row items-center gap-10">
+    
+    {/* Left Image */}
+    <div className="lg:w-1/2 w-full">
+      <img
+        src="/assets/financial-statements.jpg"
+        alt="Audited Financial Statements"
+        className="w-full h-auto rounded shadow"
+      />
+    </div>
+
+    {/* Right Text + Buttons */}
+    <div className="lg:w-1/2 w-full">
+      <h2 className="text-3xl font-bold text-dfPink mb-4">Audited Financial Statements</h2>
+      <p className="text-gray-700 mb-6">
+        We invite you to review our financials in greater detail below.
+      </p>
+
+      <div className="flex flex-col sm:flex-row gap-4">
+        <a href="#" className="bg-dfPink text-white font-semibold py-3 px-6 text-center hover:bg-pink-800 transition">
+          STATEMENT FY 2023
+        </a>
+        <a href="#" className="bg-dfPink text-white font-semibold py-3 px-6 text-center hover:bg-pink-800 transition">
+          STATEMENTS FY 2022 & 2021
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* === Our Programs Section === */}
+<section className="px-4 md:px-20 py-16 bg-[#fcf8fb] text-center">
+  <h2 className="text-3xl font-bold text-dfPink mb-2">Our Programs</h2>
+  <h3 className="text-2xl font-semibold text-gray-800 mb-8">EXPLORE OUR PROGRAMS</h3>
+
+  {/* Static Screenshot */}
+  <div className="flex justify-center mb-8">
+    <img
+      src="/assets/our-programs.png"
+      alt="Our Programs"
+      className="w-full max-w-5xl rounded shadow-md"
+    />
+  </div>
+
+  {/* Description Text */}
+  <p className="text-gray-700 max-w-3xl mx-auto mb-6">
+    At the Desai Foundation, our commitment to fostering meaningful impact drives us to design and
+    implement a diverse range of programs that touch the lives of individuals and communities.
+  </p>
+  <p className="text-gray-700 max-w-4xl mx-auto mb-8">
+    Our programming focuses on health, livelihood, menstrual equity, and community engagement. We do
+    this by ensuring that our programs cultivate dignity and create an impact for the people we serve.
+    Through collaborative efforts and innovative solutions, we create lasting change that resonates
+    far beyond our projects’ boundaries.
+  </p>
+
+  {/* Button */}
+  <a
+    href="#"
+    className="inline-block bg-dfPink text-white font-bold py-3 px-6 rounded-full hover:bg-pink-800 transition"
+  >
+    ALL PROGRAMS
+  </a>
+</section>
+
     </div>
   );
 };
