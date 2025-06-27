@@ -47,7 +47,7 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <main className="pt-20">
+      <main className="">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<About />} />
