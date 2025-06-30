@@ -22,9 +22,9 @@ import About from './pages/About';
 // import RegionalMap from './pages/RegionalMap';
 // import Impact from './pages/Impact';
 // import Awards from './pages/Awards';
-// import Volunteer from './pages/Volunteer';
-// import Fundraise from './pages/Fundraise';
-// import Careers from './pages/Careers';
+import Donation from './pages/Donation';
+// import GetInvolved from './pages/GetInvolved';
+// import PartnerWithUs from './pages/PartnerWithUs';
 // import Donate from './pages/Donate';
 
 function HomePage() {
@@ -51,15 +51,17 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<About />} />
+
+          <Route path="/Donation" element={<Donation />} />
           {/* <Route path="/team" element={<Team />} />
           <Route path="/our-work" element={<OurWork />} />
           <Route path="/stories" element={<Stories />} />
           <Route path="/map" element={<RegionalMap />} />
           <Route path="/impact" element={<Impact />} />
           <Route path="/awards" element={<Awards />} />
-          <Route path="/volunteer" element={<Volunteer />} />
-          <Route path="/fundraise" element={<Fundraise />} />
-          <Route path="/careers" element={<Careers />} />
+         
+          <Route path="/GetInvolved" element={<GetInvolved />} />
+          <Route path="/PartnerWithUs" element={<PartnerWithUs />} />
           <Route path="/donate" element={<Donate />} />
           <Route path="/news" element={<News />} /> */}
         </Routes>
