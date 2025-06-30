@@ -81,9 +81,9 @@ const Navbar = () => {
             ]} />
 
             <Dropdown title="Take Action" items={[
-              { label: 'Volunteer', link: '/volunteer' },
-              { label: 'Fundraise', link: '/fundraise' },
-              { label: 'Careers', link: '/careers' },
+              { label: 'Donation', link: '/Donation' },
+              { label: 'Get Involved', link: '/GetInvolved' },
+              { label: 'Partner With Us', link: '/PartnerWithUs' },
             ]} />
 
             <a href="/india" className="flex items-center font-semibold hover:text-dfPink">
@@ -92,7 +92,7 @@ const Navbar = () => {
             </a>
 
             <Link
-              to="/donate"
+              to="/Donation"
               className="bg-dfPink text-white text-xs font-bold px-4 py-2 rounded-full hover:bg-pink-700"
             >
               DONATE NOW
