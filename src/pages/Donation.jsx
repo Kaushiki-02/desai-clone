@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import GiftCarousel from '../components/GiftCarousel'; 
+import BhimQR from '../components/BhimQR'; 
+import WaysToDonate from '../components/WaysToDonate';
 
-const DonationPage = () => {
+const Donation = () => {
   const [step, setStep] = useState(0);
   const [amount, setAmount] = useState('10.00');
   const [customAmount, setCustomAmount] = useState('');
@@ -64,7 +67,7 @@ const DonationPage = () => {
       <img
         src="/assets/hero-donation.png"
         alt="Hero"
-        className="w-full h-auto object-cover aspect-[16/9]"
+        className="w-full h-auto object-cover]"
       />
 
       <div className="max-w-7xl mx-auto py-16 px-4 grid md:grid-cols-2 gap-8">
@@ -204,8 +207,12 @@ const DonationPage = () => {
           </div>
         </div>
       </div>
+      {/* Impact Carousel */}
+      <GiftCarousel />
+      <BhimQR />
+      <WaysToDonate />
     </div>
   );
 };
 
-export default DonationPage;
+export default Donation;

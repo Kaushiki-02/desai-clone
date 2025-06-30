@@ -7,7 +7,7 @@ module.exports = {
   theme: {
   extend: {
     fontFamily: {
-      sans: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+      sans: ['"Avenir LT Std"', 'sans-serif', '"Helvetica Neue"', 'Helvetica'],
     },
     colors: {
       desaiPink: '#dd298a',

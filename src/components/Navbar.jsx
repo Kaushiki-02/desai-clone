@@ -92,7 +92,7 @@ const Navbar = () => {
             </a>
 
             <Link
-              to="/donate"
+              to="/Donation"
               className="bg-dfPink text-white text-xs font-bold px-4 py-2 rounded-full hover:bg-pink-700"
             >
               DONATE NOW

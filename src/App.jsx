@@ -62,7 +62,7 @@ function App() {
          
           <Route path="/GetInvolved" element={<GetInvolved />} />
           <Route path="/PartnerWithUs" element={<PartnerWithUs />} />
-          <Route path="/donate" element={<Donate />} />
+          
           <Route path="/news" element={<News />} /> */}
         </Routes>
       </main>
